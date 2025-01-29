@@ -1,16 +1,12 @@
-import HeroSection from "@/components/HeroSection";
-import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/NavBar";
+import Footer from "@/components/Common/Footer";
+import Header from "@/components/Common/Header";
+import Homepage from "@/components/Common/Homepage";
 
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
-      <HeroSection />
-      <Features />
-      <Testimonials />
+      <Header />
+      <Homepage />
       <Footer />
     </div>
   );

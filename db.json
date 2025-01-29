@@ -1,0 +1,506 @@
+{
+  "classes": [
+    {
+      "id": "1",
+      "class_name": "47A",
+      "description": "Lớp học công nghệ thông tin 47A ",
+      "teacher": "Nguyễn Văn A",
+      "createdAt": "2025-01-15"
+    },
+    {
+      "id": "2",
+      "class_name": "47B",
+      "description": "Lớp học công nghệ thông tin 47B",
+      "teacher": "Lê Thị B",
+      "createdAt": "2025-01-16"
+    },
+    {
+      "id": "3",
+      "class_name": "47C",
+      "description": "Lớp học công nghệ thông tin 47C ",
+      "teacher": "Trần Văn C",
+      "createdAt": "2025-01-17"
+    },
+    {
+      "id": "4",
+      "class_name": "47D",
+      "description": "Lớp học công nghệ thông tin 47D ",
+      "teacher": "Phạm Văn D",
+      "createdAt": "2025-01-18"
+    },
+    {
+      "id": "5",
+      "class_name": "47E",
+      "description": "Lớp học công nghệ thông tin 47E ",
+      "teacher": "Vũ Thị E",
+      "createdAt": "2025-01-19"
+    },
+    {
+      "id": "6",
+      "class_name": "47F",
+      "description": "Lớp học công nghệ thông tin 47F ",
+      "teacher": "Hoàng Văn F",
+      "createdAt": "2025-01-20"
+    },
+    {
+      "id": "7",
+      "class_name": "47G",
+      "description": "Lớp học công nghệ thông tin 47G ",
+      "teacher": "Nguyễn Thị G",
+      "createdAt": "2025-01-21"
+    },
+    {
+      "id": "8",
+      "class_name": "47H",
+      "description": "Lớp học công nghệ thông tin 47H ",
+      "teacher": "Phan Văn H",
+      "createdAt": "2025-01-22"
+    },
+    {
+      "id": "9",
+      "class_name": "47I",
+      "description": "Lớp học công nghệ thông tin 47I ",
+      "teacher": "Đinh Thị I",
+      "createdAt": "2025-01-23"
+    },
+    {
+      "id": "10",
+      "class_name": "47J",
+      "description": "Lớp học công nghệ thông tin 47J ",
+      "teacher": "Bùi Văn J",
+      "createdAt": "2025-01-24"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "fullname": "Nguyễn Văn A",
+      "password": "123456",
+      "role": "ADMIN",
+      "gender": "Nam",
+      "email": "nguyen.van.a@example.com",
+      "profile_picture": "nguyen_van_a.png",
+      "phone": "0123456789",
+      "created_at": "2025-01-01T10:00:00",
+      "updated_at": "2025-01-01T12:00:00",
+      "date_of_birth": "1990-05-15",
+      "address": "123 Nguyễn Trãi, Hà Nội"
+    },
+    {
+      "id": "2",
+      "fullname": "Lê Thị B",
+      "password": "123456",
+      "role": "STUDENT",
+      "gender": "Nữ",
+      "email": "le.thi.b@example.com",
+      "profile_picture": "le_thi_b.png",
+      "phone": "0987654321",
+      "created_at": "2025-01-02T11:00:00",
+      "updated_at": "2025-01-02T13:00:00",
+      "date_of_birth": "1998-03-10",
+      "address": "456 Lê Lợi, Đà Nẵng"
+    },
+    {
+      "id": "3",
+      "fullname": "Trần Văn C",
+      "password": "123456",
+      "role": "TEACHER",
+      "gender": "Nam",
+      "email": "tran.van.c@example.com",
+      "profile_picture": "tran_van_c.png",
+      "phone": "0912345678",
+      "created_at": "2025-01-03T09:00:00",
+      "updated_at": "2025-01-03T10:30:00",
+      "date_of_birth": "1985-08-25",
+      "address": "789 Trường Chinh, TP.HCM"
+    },
+    {
+      "id": "4",
+      "fullname": "Hoàng Thị D",
+      "password": "123456",
+      "role": "STUDENT",
+      "gender": "Nam",
+      "email": "hoang.thi.d@example.com",
+      "profile_picture": "hoang_thi_d.png",
+      "phone": "0923456781",
+      "created_at": "2025-01-04T08:15:00",
+      "updated_at": "2025-01-04T09:45:00",
+      "date_of_birth": "2000-12-12",
+      "address": "321 Phan Đình Phùng, Hải Phòng"
+    },
+    {
+      "id": "5",
+      "fullname": "Phạm Văn E",
+      "password": "123456",
+      "role": "TEACHER",
+      "gender": "Nam",
+      "email": "pham.van.e@example.com",
+      "profile_picture": "pham_van_e.png",
+      "phone": "0934567890",
+      "created_at": "2025-01-05T07:30:00",
+      "updated_at": "2025-01-05T08:50:00",
+      "date_of_birth": "1980-07-01",
+      "address": "567 Hoàng Diệu, Đà Lạt"
+    },
+    {
+      "fullname": "Nguyễn Thị F",
+      "date_of_birth": "2001-04-22",
+      "gender": "Nam",
+      "phone": "0945678901",
+      "address": "789 Phạm Văn Đồng, Huế",
+      "profile_picture": "https://res.cloudinary.com/dbnofh9a8/image/upload/v1737648464/pnt4i7ojxr57rqmnzwpr.jpg",
+      "email": "nguyen.thi.f@example.com",
+      "password": "123456",
+      "role": "STUDENT",
+      "updatedAt": "2025-01-23",
+      "id": "6"
+    },
+    {
+      "fullname": "Trần Thị G",
+      "date_of_birth": "2002-02-14",
+      "gender": "Nữ",
+      "phone": "0956789012",
+      "address": "654 Nguyễn Huệ, Cần Thơ",
+      "profile_picture": "https://res.cloudinary.com/dbnofh9a8/image/upload/v1737649011/xihdmspnss3g19n7bn1o.jpg",
+      "email": "tran.thi.g@example.com",
+      "password": "123456",
+      "role": "STUDENT",
+      "updatedAt": "2025-01-23",
+      "id": "7"
+    }
+  ],
+  "lectures": [
+    {
+      "lecture_id": 1,
+      "class_id": 1,
+      "title": "Giới thiệu về Lập trình",
+      "content": "Bài giảng này giới thiệu các khái niệm cơ bản về lập trình, bao gồm biến, vòng lặp và câu lệnh điều kiện.",
+      "created_at": "2025-01-24T10:00:00",
+      "updated_at": "2025-01-24T10:00:00",
+      "id": "8d57",
+      "author_id": 101,
+      "attachment_url": "https://example.com/lectures/intro_programming.pdf"
+    },
+    {
+      "lecture_id": 2,
+      "class_id": 1,
+      "title": "Cấu trúc Dữ liệu và Thuật toán",
+      "content": "Học về mảng, danh sách liên kết, ngăn xếp, hàng đợi và các thuật toán cơ bản.",
+      "created_at": "2025-01-24T11:00:00",
+      "updated_at": "2025-01-24T11:00:00",
+      "id": "57eb",
+      "author_id": 102,
+      "attachment_url": "https://example.com/lectures/data_structures_algorithms.pdf"
+    },
+    {
+      "lecture_id": 3,
+      "class_id": 2,
+      "title": "Hệ quản trị Cơ sở Dữ liệu",
+      "content": "Giới thiệu về cơ sở dữ liệu quan hệ, SQL và chuẩn hóa dữ liệu.",
+      "created_at": "2025-01-24T12:00:00",
+      "updated_at": "2025-01-24T12:00:00",
+      "id": "bcd8",
+      "author_id": 103,
+      "attachment_url": "https://example.com/lectures/database_management.pdf"
+    },
+    {
+      "lecture_id": 4,
+      "class_id": 2,
+      "title": "Mạng Máy tính",
+      "content": "Khám phá các khái niệm cơ bản của mạng, bao gồm mô hình OSI và các giao thức TCP/IP.",
+      "created_at": "2025-01-24T13:00:00",
+      "updated_at": "2025-01-24T13:00:00",
+      "id": "a915",
+      "author_id": 104,
+      "attachment_url": "https://example.com/lectures/computer_networks.pdf"
+    },
+    {
+      "lecture_id": 5,
+      "class_id": 3,
+      "title": "Hệ điều hành",
+      "content": "Nghiên cứu về tiến trình, luồng, quản lý bộ nhớ và hệ thống tệp.",
+      "created_at": "2025-01-24T14:00:00",
+      "updated_at": "2025-01-24T14:00:00",
+      "id": "5124",
+      "author_id": 105,
+      "attachment_url": "https://example.com/lectures/operating_systems.pdf"
+    },
+    {
+      "lecture_id": 6,
+      "class_id": 3,
+      "title": "Kỹ thuật Phần mềm",
+      "content": "Học về các phương pháp phát triển phần mềm, bao gồm Agile và Waterfall.",
+      "created_at": "2025-01-24T15:00:00",
+      "updated_at": "2025-01-24T15:00:00",
+      "id": "16a9",
+      "author_id": 106,
+      "attachment_url": "https://example.com/lectures/software_engineering.pdf"
+    },
+    {
+      "lecture_id": 7,
+      "class_id": 4,
+      "title": "Trí tuệ Nhân tạo",
+      "content": "Tổng quan về các khái niệm AI, bao gồm học máy và mạng nơ-ron.",
+      "created_at": "2025-01-24T16:00:00",
+      "updated_at": "2025-01-24T16:00:00",
+      "id": "6536",
+      "author_id": 107,
+      "attachment_url": "https://example.com/lectures/artificial_intelligence.pdf"
+    },
+    {
+      "lecture_id": 8,
+      "class_id": 4,
+      "title": "Phát triển Web",
+      "content": "Học về phát triển front-end và back-end, bao gồm HTML, CSS và JavaScript.",
+      "created_at": "2025-01-24T17:00:00",
+      "updated_at": "2025-01-24T17:00:00",
+      "id": "e9a1",
+      "author_id": 108,
+      "attachment_url": "https://example.com/lectures/web_development.pdf"
+    },
+    {
+      "lecture_id": 9,
+      "class_id": 5,
+      "title": "An ninh Mạng",
+      "content": "Hiểu các nguyên tắc bảo mật, mã hóa và các phương pháp bảo vệ hệ thống.",
+      "created_at": "2025-01-24T18:00:00",
+      "updated_at": "2025-01-24T18:00:00",
+      "id": "b19c",
+      "author_id": 109,
+      "attachment_url": "https://example.com/lectures/cyber_security.pdf"
+    },
+    {
+      "lecture_id": 10,
+      "class_id": 5,
+      "title": "Điện toán Đám mây",
+      "content": "Giới thiệu về các dịch vụ đám mây, ảo hóa và hệ thống phân tán.",
+      "created_at": "2025-01-24T19:00:00",
+      "updated_at": "2025-01-24T19:00:00",
+      "id": "8d83",
+      "author_id": 110,
+      "attachment_url": "https://example.com/lectures/cloud_computing.pdf"
+    },
+    {
+      "id": "f9ae",
+      "class_id": "2",
+      "title": "test",
+      "content": "avd",
+      "created_at": "2025-01-24T11:56:06.281Z",
+      "updated_at": "2025-01-24T11:56:06.281Z",
+      "author_id": 111,
+      "attachment_url": "https://example.com/lectures/test.pdf"
+    },
+    {
+      "class_id": "7",
+      "title": "test edit",
+      "content": "avd edit fdsfs fsdf",
+      "created_at": "2025-01-24T13:33:30.342Z",
+      "updated_at": "2025-01-24T13:33:30.342Z",
+      "id": "e763",
+      "author_id": 112,
+      "attachment_url": "https://example.com/lectures/test_edit.pdf"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "1",
+      "class_id": 1,
+      "title": "Bài tập Lập trình C cơ bản",
+      "description": "Viết chương trình tính tổng các số nguyên từ 1 đến N.",
+      "due_date": "2025-02-01T08:00:00",
+      "created_at": "2025-01-25T10:00:00",
+      "updated_at": "2025-01-25T10:00:00"
+    },
+    {
+      "id": "2",
+      "class_id": 2,
+      "title": "Thiết kế cơ sở dữ liệu đơn giản",
+      "description": "Tạo mô hình ERD cho hệ thống quản lý sinh viên.",
+      "due_date": "2025-02-03T10:00:00",
+      "created_at": "2025-01-25T11:00:00",
+      "updated_at": "2025-01-25T11:00:00"
+    },
+    {
+      "id": "3",
+      "class_id": 3,
+      "title": "Bài tập cấu trúc dữ liệu",
+      "description": "Cài đặt danh sách liên kết đơn và thực hiện các phép toán cơ bản.",
+      "due_date": "2025-02-05T09:30:00",
+      "created_at": "2025-01-25T12:00:00",
+      "updated_at": "2025-01-25T12:00:00"
+    },
+    {
+      "id": "4",
+      "class_id": 4,
+      "title": "Xây dựng ứng dụng quản lý sinh viên",
+      "description": "Viết ứng dụng Java để quản lý thông tin sinh viên bằng giao diện console.",
+      "due_date": "2025-02-07T15:00:00",
+      "created_at": "2025-01-25T13:00:00",
+      "updated_at": "2025-01-25T13:00:00"
+    },
+    {
+      "id": "5",
+      "class_id": 5,
+      "title": "Thực hành SQL nâng cao",
+      "description": "Thực hiện các truy vấn phức tạp trên cơ sở dữ liệu MySQL.",
+      "due_date": "2025-02-09T11:00:00",
+      "created_at": "2025-01-25T14:00:00",
+      "updated_at": "2025-01-25T14:00:00"
+    },
+    {
+      "id": "6",
+      "class_id": 1,
+      "title": "Bài tập vòng lặp trong C",
+      "description": "Viết chương trình in bảng cửu chương từ 1 đến 10.",
+      "due_date": "2025-02-11T10:00:00",
+      "created_at": "2025-01-25T15:00:00",
+      "updated_at": "2025-01-25T15:00:00"
+    },
+    {
+      "id": "7",
+      "class_id": 2,
+      "title": "Phân tích dữ liệu quan hệ",
+      "description": "Xác định các khóa chính và khóa ngoại cho hệ thống bán hàng.",
+      "due_date": "2025-02-13T09:00:00",
+      "created_at": "2025-01-25T16:00:00",
+      "updated_at": "2025-01-25T16:00:00"
+    },
+    {
+      "id": "8",
+      "class_id": 3,
+      "title": "Cấu trúc dữ liệu ngăn xếp",
+      "description": "Cài đặt và thực hiện các thao tác với ngăn xếp bằng mảng.",
+      "due_date": "2025-02-15T10:00:00",
+      "created_at": "2025-01-25T17:00:00",
+      "updated_at": "2025-01-25T17:00:00"
+    },
+    {
+      "id": "9",
+      "class_id": 4,
+      "title": "Ứng dụng quản lý thư viện",
+      "description": "Xây dựng ứng dụng quản lý mượn trả sách bằng Java Swing.",
+      "due_date": "2025-02-17T14:00:00",
+      "created_at": "2025-01-25T18:00:00",
+      "updated_at": "2025-01-25T18:00:00"
+    },
+    {
+      "id": "10",
+      "class_id": 5,
+      "title": "Tối ưu hóa truy vấn SQL",
+      "description": "Phân tích và cải tiến hiệu năng cho các truy vấn trên cơ sở dữ liệu lớn.",
+      "due_date": "2025-02-19T12:00:00",
+      "created_at": "2025-01-25T19:00:00",
+      "updated_at": "2025-01-25T19:00:00"
+    },
+    {
+      "id": "11",
+      "class_id": 5,
+      "title": "Tối ưu hóa truy vấn SQL",
+      "description": "Phân tích và cải tiến hiệu năng cho các truy vấn trên cơ sở dữ liệu lớn.",
+      "due_date": "2025-02-19T12:00:00",
+      "created_at": "2025-01-25T19:00:00",
+      "updated_at": "2025-01-25T19:00:00"
+    }
+  ],
+  "exams": [
+    {
+      "id": "1",
+      "class_id": 1,
+      "title": "Bài tập Lập trình C cơ bản",
+      "description": "Viết chương trình tính tổng các số nguyên từ 1 đến N.",
+      "due_date": "2025-02-01T08:00:00",
+      "created_at": "2025-01-25T10:00:00",
+      "updated_at": "2025-01-25T10:00:00"
+    },
+    {
+      "id": "2",
+      "class_id": 2,
+      "title": "Thiết kế cơ sở dữ liệu đơn giản",
+      "description": "Tạo mô hình ERD cho hệ thống quản lý sinh viên.",
+      "due_date": "2025-02-03T10:00:00",
+      "created_at": "2025-01-25T11:00:00",
+      "updated_at": "2025-01-25T11:00:00"
+    },
+    {
+      "id": "3",
+      "class_id": 3,
+      "title": "Bài tập cấu trúc dữ liệu",
+      "description": "Cài đặt danh sách liên kết đơn và thực hiện các phép toán cơ bản.",
+      "due_date": "2025-02-05T09:30:00",
+      "created_at": "2025-01-25T12:00:00",
+      "updated_at": "2025-01-25T12:00:00"
+    },
+    {
+      "id": "4",
+      "class_id": 4,
+      "title": "Xây dựng ứng dụng quản lý sinh viên",
+      "description": "Viết ứng dụng Java để quản lý thông tin sinh viên bằng giao diện console.",
+      "due_date": "2025-02-07T15:00:00",
+      "created_at": "2025-01-25T13:00:00",
+      "updated_at": "2025-01-25T13:00:00"
+    },
+    {
+      "id": "5",
+      "class_id": 5,
+      "title": "Thực hành SQL nâng cao",
+      "description": "Thực hiện các truy vấn phức tạp trên cơ sở dữ liệu MySQL.",
+      "due_date": "2025-02-09T11:00:00",
+      "created_at": "2025-01-25T14:00:00",
+      "updated_at": "2025-01-25T14:00:00"
+    },
+    {
+      "id": "6",
+      "class_id": 1,
+      "title": "Bài tập vòng lặp trong C",
+      "description": "Viết chương trình in bảng cửu chương từ 1 đến 10.",
+      "due_date": "2025-02-11T10:00:00",
+      "created_at": "2025-01-25T15:00:00",
+      "updated_at": "2025-01-25T15:00:00"
+    },
+    {
+      "id": "7",
+      "class_id": 2,
+      "title": "Phân tích dữ liệu quan hệ",
+      "description": "Xác định các khóa chính và khóa ngoại cho hệ thống bán hàng.",
+      "due_date": "2025-02-13T09:00:00",
+      "created_at": "2025-01-25T16:00:00",
+      "updated_at": "2025-01-25T16:00:00"
+    },
+    {
+      "id": "8",
+      "class_id": 3,
+      "title": "Cấu trúc dữ liệu ngăn xếp",
+      "description": "Cài đặt và thực hiện các thao tác với ngăn xếp bằng mảng.",
+      "due_date": "2025-02-15T10:00:00",
+      "created_at": "2025-01-25T17:00:00",
+      "updated_at": "2025-01-25T17:00:00"
+    },
+    {
+      "id": "9",
+      "class_id": 4,
+      "title": "Ứng dụng quản lý thư viện",
+      "description": "Xây dựng ứng dụng quản lý mượn trả sách bằng Java Swing.",
+      "due_date": "2025-02-17T14:00:00",
+      "created_at": "2025-01-25T18:00:00",
+      "updated_at": "2025-01-25T18:00:00"
+    },
+    {
+      "id": "10",
+      "class_id": 5,
+      "title": "Tối ưu hóa truy vấn SQL",
+      "description": "Phân tích và cải tiến hiệu năng cho các truy vấn trên cơ sở dữ liệu lớn.",
+      "due_date": "2025-02-19T12:00:00",
+      "created_at": "2025-01-25T19:00:00",
+      "updated_at": "2025-01-25T19:00:00"
+    },
+    {
+      "id": "11",
+      "class_id": 5,
+      "title": "Tối ưu hóa truy vấn SQL",
+      "description": "Phân tích và cải tiến hiệu năng cho các truy vấn trên cơ sở dữ liệu lớn.",
+      "due_date": "2025-02-19T12:00:00",
+      "created_at": "2025-01-25T19:00:00",
+      "updated_at": "2025-01-25T19:00:00"
+    }
+  ]
+}

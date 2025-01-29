@@ -1,63 +1,119 @@
-import { Facebook, Twitter, Linkedin } from "lucide-react"; // Importing icons from lucide-react
+import { BookOpen, Link } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-        {/* Links Section */}
-        <div className="flex flex-col md:flex-row md:space-x-8 mb-4 md:mb-0">
-          <a href="/privacy" className="hover:underline">
-            Privacy Policy
-          </a>
-          <a href="/terms" className="hover:underline">
-            Terms of Service
-          </a>
-          <a href="/contact" className="hover:underline">
-            Contact Us
-          </a>
-          <a href="/about" className="hover:underline">
-            About Us
-          </a>
+    <footer className="bg-gray-50 border-t">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-2">
+              <BookOpen className="h-6 w-6 text-blue-600" />
+              <span className="font-bold text-xl">EduLearn</span>
+            </Link>
+            <p className="text-sm text-gray-600">
+              Nền tảng học trực tuyến hàng đầu Việt Nam
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Về chúng tôi</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/about"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  Giới thiệu
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  Liên hệ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/careers"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  Tuyển dụng
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Hỗ trợ</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/faq"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/support"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  Trung tâm hỗ trợ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms"
+                  className="text-sm text-gray-600 hover:text-blue-600"
+                >
+                  Điều khoản
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Theo dõi chúng tôi</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-600 hover:text-blue-600">
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {/* Facebook icon */}
+                </svg>
+              </a>
+              <a href="#" className="text-gray-600 hover:text-blue-600">
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {/* Twitter icon */}
+                </svg>
+              </a>
+              <a href="#" className="text-gray-600 hover:text-blue-600">
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {/* Instagram icon */}
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Social Media Icons */}
-        <div className="flex space-x-4">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-6 h-6 hover:text-blue-500 transition" />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-6 h-6 hover:text-blue-400 transition" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6 hover:text-blue-600 transition" />
-          </a>
+        <div className="border-t mt-12 pt-8 text-center text-sm text-gray-600">
+          <p>&copy; 2024 EduLearn. All rights reserved.</p>
         </div>
-      </div>
-
-      {/* Copyright Section */}
-      <div className="text-center mt-4">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} LearnCode University. All rights
-          reserved.
-        </p>
       </div>
     </footer>
   );
 };
-
 export default Footer;
