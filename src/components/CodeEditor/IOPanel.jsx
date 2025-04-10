@@ -7,8 +7,6 @@ import TestCaseItem from "./TestCaseItem";
 import { motion, AnimatePresence } from "framer-motion";
 
 const IOPanel = ({ input, setInput, output, testcases, score, maxScore }) => {
-  console.log("test", testcases, output);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

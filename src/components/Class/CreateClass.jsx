@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { createClass, createClassByTeacher } from "@/api/classApi";
+import { createClass } from "@/api/classApi";
 import { getAllUsers } from "@/api/userApi";
 
 import { toast } from "react-toastify";
@@ -75,13 +75,7 @@ const CreateClass = () => {
   const onSubmit = async (values) => {
     setIsLoading(true);
     try {
-      let res;
-      if (auth.role === "admin") {
-        res = await createClass(values);
-      } else if (auth.role === "teacher") {
-        res = await createClassByTeacher(auth.id, values);
-      }
-
+      const res = await createClass(values);
       if (res.success) {
         backHome();
         toast.success(res.message);

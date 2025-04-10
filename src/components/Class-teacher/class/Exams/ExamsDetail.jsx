@@ -289,6 +289,7 @@ const ExamsDetail = () => {
 
             <TabsContent value="grading">
               <GradingTab
+                classDetail={classDetail}
                 exam={exam}
                 students={studentInclass}
                 studentSumbmissions={studentSumbmissions}

@@ -1,9 +1,16 @@
 import axios from "../utils/customAxios";
 const token = JSON.parse(localStorage.getItem("token"))?.accessToken;
 
-export const submitExamsForITStudent = (examId, studentId, classId, data) => {
+export const submitExamsForITStudent = (
+  examId,
+  studentId,
+  classId,
+  examContentId,
+  data
+) => {
+  console.log("data", data);
   return axios.post(
-    `/app/exam-submissions/exams/${examId}/students/${studentId}/classes/${classId}/submissions`,
+    `/app/exam-submissions/exams/${examId}/students/${studentId}/classes/${classId}/exam-contents/${examContentId}/submissions`,
     data,
     {
       headers: {

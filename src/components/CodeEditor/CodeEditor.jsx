@@ -31,7 +31,6 @@ const CodeEditor = () => {
   const [score, setScore] = useState(0);
   const [maxScore, setMaxScore] = useState(0);
   const [testcases, setTestcases] = useState([]);
-  const [rawTestcases, setRawTestcases] = useState([]);
   const [ioExpanded, setIoExpanded] = useState(false);
   const [collapseProblem, setCollapseProblem] = useState(false);
 
@@ -71,7 +70,6 @@ const CodeEditor = () => {
       const res = await getAllTestCaseByExamContentId(examContentId);
       if (res.success) {
         setTestcases(res.data);
-        setRawTestcases(res.data);
       }
     } catch (error) {
       console.error("Error fetching test cases:", error);
@@ -87,20 +85,18 @@ const CodeEditor = () => {
         language_id: languages.find((l) => l.value === language)?.id || 54,
         input: inputText,
       });
-
+      console.log("runCode res", res);
       if (res.success) {
         const processed = res.data.testcase_results.map((tc) => {
-          const matched = rawTestcases.find((t) => t.id === tc.id);
           return {
             ...tc,
-            input: matched?.input || "",
-            score: matched?.score || 0,
-            expected_output: matched?.expected_output || tc.expected_output,
+            input: tc?.input || "",
+            score: tc?.score || 0,
+            expected_output: tc?.expected_output || tc.expected_output,
             status: tc.passed ? "passed" : "failed",
-            actual: res.data.user_input_result?.output || "",
+            actual: tc.output || "",
           };
         });
-        console.log("processed", processed);
         setOutput(res.data.user_input_result.output);
         setTestcases(processed);
         calculateScore(processed);
@@ -120,12 +116,30 @@ const CodeEditor = () => {
   };
 
   const handleSubmitExamsForITStudent = async () => {
-    const res = await submitExamsForITStudent(examId, auth.id, classId, {
-      file_content: code,
-      grade: score,
-      exam_content_id: examContentId,
-    });
-    console.log("res handleSubmitExamsForITStudent", res);
+    const detailed_testcase_results = testcases.map((tc) => ({
+      testcase_id: tc.id,
+      score: tc.score,
+      status: tc.status,
+    }));
+
+    const res = await submitExamsForITStudent(
+      examId,
+      auth.id,
+      classId,
+      examContentId,
+      {
+        file_content: code,
+        grade: score,
+        exam_content_id: examContentId,
+        detailed_testcase_results: detailed_testcase_results,
+      }
+    );
+    console.log("res", res);
+    if (res.success) {
+      toast.success("Submitted successfully!");
+    } else {
+      toast.error(res.message);
+    }
   };
   const uploadCode = (e) => {
     const file = e.target.files[0];

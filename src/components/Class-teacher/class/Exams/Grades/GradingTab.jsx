@@ -60,6 +60,7 @@ import { Progress } from "@/components/ui/progress";
 import ScoreDistributionChart from "./ScoreDistributionChart";
 
 const GradingTab = ({
+  classDetail,
   exam,
   students,
   studentSumbmissions,
@@ -234,7 +235,7 @@ const GradingTab = ({
     const a = document.createElement("a");
     a.setAttribute("hidden", "");
     a.setAttribute("href", url);
-    a.setAttribute("download", "danh_sach_sinh_vien.csv");
+    a.setAttribute("download", `${classDetail.class_name} - ${exam.title}.csv`);
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -8,7 +8,6 @@ import {
 import { motion } from "framer-motion";
 
 const TestCaseItem = ({ test, index }) => {
-  console.log("Test", test);
   return (
     <Accordion type="multiple" collapsible>
       <AccordionItem
@@ -70,7 +69,7 @@ const TestCaseItem = ({ test, index }) => {
                   animate={{ opacity: 1, height: "auto" }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h4 className="text-xs font-medium mb-1">Your Output:</h4>
+                  <h4 className="text-xs font-medium mb-1">Actual Output:</h4>
                   <pre
                     className={`text-xs p-2 rounded-md ${
                       test.status === "passed"
