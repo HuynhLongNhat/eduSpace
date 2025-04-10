@@ -50,7 +50,7 @@ export const createExamContentByExamId = (examId, content) => {
 };
 
 export const updateExamContentByExamContentId = (examContentId, dataUpdate) => {
-  return axios.patch(`/app/exams/${examContentId}/content`, dataUpdate, {
+  return axios.patch(`/app/exams/content/${examContentId}`, dataUpdate, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
