@@ -65,6 +65,17 @@ const CodeEditor = () => {
     }
   }, [examContentId]);
 
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
   const fetchAllTestCaseForExamContent = async () => {
     try {
       const res = await getAllTestCaseByExamContentId(examContentId);
@@ -134,13 +145,13 @@ const CodeEditor = () => {
         detailed_testcase_results: detailed_testcase_results,
       }
     );
-    console.log("res", res);
     if (res.success) {
       toast.success("Submitted successfully!");
     } else {
       toast.error(res.message);
     }
   };
+
   const uploadCode = (e) => {
     const file = e.target.files[0];
     if (!file) return;

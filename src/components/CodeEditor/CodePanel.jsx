@@ -20,6 +20,8 @@ import {
 } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import EditorThemeSelector from "../CodeEditor/EditThemeSelector";
+import { useState } from "react";
+import ConfirmSubmit from "./ConfirmSubmit";
 
 const CodePanel = ({
   code,
@@ -38,6 +40,7 @@ const CodePanel = ({
   submitCode,
   isRunning,
 }) => {
+  const [open, setOpen] = useState(false);
   return (
     <Card className="border-0 h-full rounded-none ">
       <CardHeader className="px-4 py-2 flex flex-row justify-between items-center">
@@ -110,10 +113,10 @@ const CodePanel = ({
           </Button>
           <Button
             variant="outline"
-            onClick={() => {
-              submitCode();
-            }}
             className="flex items-center gap-2 px-4 py-2"
+            onClick={() => {
+              setOpen(!open);
+            }}
           >
             <Check className="h-4 w-4" />
             Submit
@@ -149,6 +152,19 @@ const CodePanel = ({
           />
         </motion.div>
       </CardContent>
+
+      {
+        <ConfirmSubmit
+          show={open}
+          handleClose={(open) => {
+            setOpen(open);
+            if (!open) {
+              setOpen(null);
+            }
+          }}
+          submitCode={submitCode}
+        />
+      }
     </Card>
   );
 };

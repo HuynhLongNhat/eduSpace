@@ -610,7 +610,9 @@ const GradingTab = ({
                                 {getFileIcon(fileName)}
                                 <div>
                                   <div className="font-medium dark:text-gray-200">
-                                    {fileName}
+                                    {exam.type_student === "it"
+                                      ? `${selectedSubmission.student?.fullname} - ${exam.title} `
+                                      : { fileName }}
                                   </div>
                                   <div className="text-sm text-gray-500 dark:text-gray-400">
                                     Đã nộp:{" "}
@@ -621,17 +623,64 @@ const GradingTab = ({
                                 </div>
                               </div>
                               <div>
-                                <Button
-                                  variant="outline"
-                                  size="sm"
-                                  className="text-blue-600 dark:text-blue-400 dark:border-gray-600"
-                                  onClick={() =>
-                                    viewFileOnline(file.file_content)
-                                  }
-                                >
-                                  <Eye className="h-4 w-4 mr-2" />
-                                  Xem
-                                </Button>
+                                {exam.type_student === "common" && (
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="text-blue-600 dark:text-blue-400 dark:border-gray-600"
+                                    onClick={() =>
+                                      viewFileOnline(file.file_content)
+                                    }
+                                  >
+                                    <Eye className="h-4 w-4 mr-2" />
+                                    Xem
+                                  </Button>
+                                )}
+                                {exam.type_student === "it" && (
+                                  <div>
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="text-blue-600 dark:text-blue-400 dark:border-gray-600"
+                                      onClick={() => {
+                                        const newWindow = window.open(
+                                          "",
+                                          "_blank"
+                                        );
+                                        newWindow.document.write(`
+          <html>
+            <head>
+              <title>Xem nội dung file</title>
+              <style>
+                body {
+                  background-color: #1e1e1e;
+                  color: #d4d4d4;
+                  font-family: monospace;
+                  padding: 20px;
+                  white-space: pre-wrap;
+                }
+                pre {
+                  white-space: pre-wrap;
+                  word-wrap: break-word;
+                }
+              </style>
+            </head>
+            <body>
+              <h2>Nội dung file:</h2>
+              <pre>${file.file_content
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")}</pre>
+            </body>
+          </html>
+        `);
+                                        newWindow.document.close();
+                                      }}
+                                    >
+                                      <Eye className="h-4 w-4 mr-2" />
+                                      Xem
+                                    </Button>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           );
