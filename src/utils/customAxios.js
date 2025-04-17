@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Set config defaults when creating the instance
 const instance = axios.create({
-  baseURL: "https://teaching-online-server.onrender.com",
+  baseURL: "https://api-service-9cy27.ondigitalocean.app/",
   timeout: 10000,
   withCredentials: true,
 });
