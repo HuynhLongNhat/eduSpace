@@ -26,6 +26,7 @@ const CodeEditor = () => {
   const [code, setCode] = useState(codeExamples.cpp);
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const [error, setError] = useState("");
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [score, setScore] = useState(0);
@@ -109,6 +110,7 @@ const CodeEditor = () => {
           };
         });
         setOutput(res.data.user_input_result.output);
+        setError(res.data.error);
         setTestcases(processed);
         calculateScore(processed);
 
@@ -303,7 +305,7 @@ const CodeEditor = () => {
 
           {/* Divider với toggle control cho I/O */}
           <motion.div
-            className="border-t border-border bg-card/50 flex items-center justify-between px-4 py-2 cursor-pointer hover:bg-card/80 transition-colors"
+            className="border-t border-border bg-card/50 flex items-center justify-between px-4 py-2 cursor-pointer  "
             onClick={toggleIOExpanded}
             whileHover={{ backgroundColor: "rgba(var(--card), 0.9)" }}
             whileTap={{ scale: 0.98 }}
@@ -325,8 +327,6 @@ const CodeEditor = () => {
               )}
             </div>
           </motion.div>
-
-          {/* Output panel */}
           <div
             className="transition-all duration-300 border-t border-border bg-card"
             style={{
@@ -339,6 +339,7 @@ const CodeEditor = () => {
               input={input}
               setInput={setInput}
               output={output}
+              error={error}
               testcases={testcases}
               score={score}
               maxScore={maxScore}

@@ -45,7 +45,7 @@ const ListExamContentForIt = () => {
           <Button
             variant="outline"
             size="sm"
-            className="flex items-center gap-1 text-blue-600 border-blue-600 hover:bg-blue-50"
+            className="flex items-center gap-1 text-blue-600 border-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-900/20 dark:hover:text-white"
             onClick={() =>
               navigate(
                 `/teacher/classes/${classId}/exams/${examId}/create/exam-content`

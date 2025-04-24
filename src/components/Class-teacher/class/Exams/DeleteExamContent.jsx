@@ -25,11 +25,9 @@ const DeleteExamContent = ({
     setIsLoading(true);
     try {
       const res = await deleteExamContent(examToDelete?.id);
-      if (res.success) {
-        toast.success(res.message);
-        handleClose();
-        fetchAllExamContentByExamId(examId);
-      }
+      toast.success(res.message);
+      handleClose();
+      fetchAllExamContentByExamId(examId);
     } catch (error) {
       const errorMessage =
         error.response?.data?.error?.details ||
@@ -49,7 +47,7 @@ const DeleteExamContent = ({
           <DialogTitle className="flex items-center space-x-2 text-xl font-semibold text-gray-900 dark:text-white">
             <Trash size={20} className="text-red-600" />
             <span>
-              Xác nhận xóa{" "}
+              Xác nhận xóa
               {decodeURIComponent(examToDelete?.description?.split("/").pop())}
               !!
             </span>

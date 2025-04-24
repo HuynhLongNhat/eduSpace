@@ -69,9 +69,9 @@ const AddExamContentPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
       <div className="max-w-5xl mx-auto">
-        <Card>
+        <Card className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
           <CardHeader className="pt-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
@@ -79,12 +79,12 @@ const AddExamContentPage = () => {
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Tạo chi tiết bài tập
                   </h1>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     Tạo chi tiết bài tập cho sinh viên IT
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                 <Clock className="h-4 w-4" />
                 <span>{new Date().toLocaleDateString("vi-VN")}</span>
               </div>
@@ -94,21 +94,22 @@ const AddExamContentPage = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6 bg-white p-6 rounded-lg shadow-md border border-gray-200"
+                className="space-y-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700"
               >
+                {/* title */}
                 <FormField
                   control={form.control}
                   name="title"
                   render={({ field }) => (
                     <FormItem className="space-y-2">
-                      <FormLabel className="text-gray-700 font-medium">
+                      <FormLabel className="text-gray-700 dark:text-gray-100 font-medium">
                         Tiêu đề
                       </FormLabel>
                       <FormControl>
                         <Input
                           {...field}
                           placeholder="Nhập tiêu đề"
-                          className="w-full bg-white border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded-lg px-4 py-2 transition-all duration-200"
+                          className="w-full bg-white dark:bg-gray-700 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded-lg px-4 py-2 transition-all duration-200"
                           disabled={isLoading}
                         />
                       </FormControl>
@@ -116,17 +117,19 @@ const AddExamContentPage = () => {
                     </FormItem>
                   )}
                 />
+
+                {/* description */}
                 <FormField
                   control={form.control}
                   name="description"
                   render={({ field }) => (
                     <FormItem className="space-y-2">
-                      <FormLabel className="text-gray-700 font-medium">
+                      <FormLabel className="text-gray-700 dark:text-gray-100 font-medium">
                         Mô tả bài tập
                       </FormLabel>
                       <FormControl>
                         <div
-                          className="editor-wrapper"
+                          className="editor-wrapper dark:bg-gray-700"
                           style={{ height: "300px" }}
                         >
                           <MDEditor
@@ -134,15 +137,6 @@ const AddExamContentPage = () => {
                             onChange={({ text }) => field.onChange(text)}
                             renderHTML={(text) => mdParser.render(text)}
                             style={{ height: "100%" }}
-                            config={{
-                              view: { menu: true, md: true, html: true },
-                              canView: {
-                                menu: true,
-                                md: true,
-                                html: true,
-                                fullScreen: true,
-                              },
-                            }}
                           />
                         </div>
                       </FormControl>
@@ -150,12 +144,14 @@ const AddExamContentPage = () => {
                     </FormItem>
                   )}
                 />
-                <div className="flex flex-col sm:flex-row gap-3 justify-end pt-4 border-t border-gray-200">
+
+                {/* buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-end pt-4 border-t border-gray-200 dark:border-gray-600">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={handleCancel}
-                    className="w-full sm:w-auto border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg px-4 py-2 transition-all"
+                    className="w-full sm:w-auto border border-gray-300 dark:border-gray-500 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg px-4 py-2 transition-all"
                     disabled={isLoading}
                   >
                     <X className="h-4 w-4 mr-2" />

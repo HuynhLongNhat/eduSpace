@@ -64,22 +64,24 @@ const SubmittedFiles = ({
   if (files.length === 0) {
     if (isOverdue) {
       return (
-        <div className="flex flex-col items-center justify-center py-6 text-center border border-dashed rounded-lg bg-gray-50">
-          <AlertCircle className="h-12 w-12 text-gray-400 mb-2" />
-          <h3 className="text-sm font-medium text-gray-600">
+        <div className="flex flex-col items-center justify-center py-6 text-center border border-dashed rounded-lg bg-gray-50 dark:bg-gray-800">
+          <AlertCircle className="h-12 w-12 text-gray-400 dark:text-gray-500 mb-2" />
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
             Đã quá hạn nộp bài
           </h3>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
             Bạn đã quá hạn nộp bài. Vui lòng liên hệ giáo viên nếu có thắc mắc.
           </p>
         </div>
       );
     } else {
       return (
-        <div className="flex flex-col items-center justify-center py-6 text-center border border-dashed rounded-lg bg-gray-50">
-          <AlertCircle className="h-12 w-12 text-gray-400 mb-2" />
-          <h3 className="text-sm font-medium text-gray-600">Chưa có bài nộp</h3>
-          <p className="text-xs text-gray-500 mt-1">
+        <div className="flex flex-col items-center justify-center py-6 text-center border border-dashed rounded-lg bg-gray-50 dark:bg-gray-800">
+          <AlertCircle className="h-12 w-12 text-gray-400 dark:text-gray-500 mb-2" />
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+            Chưa có bài nộp
+          </h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
             Hãy chọn file và nhấn nút &ldquo;Nộp bài&rdquo; để gửi bài làm của
             bạn.
           </p>
@@ -90,11 +92,13 @@ const SubmittedFiles = ({
 
   return (
     <div className="space-y-1">
-      <div className="border rounded-lg overflow-hidden">
-        <div className="bg-gray-50 px-4 py-2 border-b">
-          <h3 className="text-sm font-medium">Bài nộp của bạn</h3>
+      <div className="border rounded-lg overflow-hidden dark:border-gray-700">
+        <div className="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-b">
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+            Bài nộp của bạn
+          </h3>
         </div>
-        <ul className="divide-y divide-gray-200 max-h-60 overflow-y-auto">
+        <ul className="divide-y divide-gray-200 max-h-60 overflow-y-auto dark:divide-gray-700">
           {files.map((file) => {
             const fileName = file.file_content
               ? decodeURIComponent(
@@ -105,7 +109,7 @@ const SubmittedFiles = ({
             return (
               <li
                 key={file.id}
-                className="px-4 py-3 hover:bg-gray-50 transition-colors"
+                className="px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
                 <div className="flex items-center">
                   <div className="mr-3 flex-shrink-0">
@@ -113,17 +117,17 @@ const SubmittedFiles = ({
                   </div>
                   <div className="flex-1 min-w-0">
                     <p
-                      className="text-sm font-medium truncate"
+                      className="text-sm font-medium truncate text-gray-900 dark:text-gray-100"
                       title={fileName}
                     >
                       <button
                         onClick={() => viewFileOnline(file.file_content)}
-                        className="font-semibold text-md line-clamp-1 text-blue-600 hover:underline"
+                        className="font-semibold text-md line-clamp-1 text-blue-600 dark:text-blue-400 hover:underline"
                       >
                         {fileName}
                       </button>
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
                       Đã nộp:{" "}
                       {moment(file.created_at).format("HH:mm - DD/MM/YYYY")}
                     </p>
@@ -132,7 +136,7 @@ const SubmittedFiles = ({
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 text-gray-500 hover:text-red-600"
+                      className="h-8 w-8 text-gray-500 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-400"
                       onClick={() => openDeleteConfirmDialog(file)}
                       title="Xóa file"
                     >
@@ -149,8 +153,10 @@ const SubmittedFiles = ({
       <Dialog open={confirmDialogOpen} onOpenChange={setConfirmDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Xác nhận xóa !</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-gray-900 dark:text-gray-100">
+              Xác nhận xóa !
+            </DialogTitle>
+            <DialogDescription className="text-gray-700 dark:text-gray-300">
               Bạn có chắc chắn muốn xóa file{" "}
               <span className="font-semibold">
                 {fileToDelete

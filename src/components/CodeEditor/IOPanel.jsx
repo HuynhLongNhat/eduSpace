@@ -6,7 +6,15 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import TestCaseItem from "./TestCaseItem";
 import { motion, AnimatePresence } from "framer-motion";
 
-const IOPanel = ({ input, setInput, output, testcases, score, maxScore }) => {
+const IOPanel = ({
+  input,
+  setInput,
+  output,
+  error,
+  testcases,
+  score,
+  maxScore,
+}) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,13 +87,13 @@ const IOPanel = ({ input, setInput, output, testcases, score, maxScore }) => {
           >
             <AnimatePresence mode="wait">
               <motion.div
-                key={output}
+                key={output || error}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
               >
-                {output || "Output sẽ hiển thị ở đây..."}
+                {output || error || "Output sẽ hiển thị ở đây..."}
               </motion.div>
             </AnimatePresence>
           </motion.pre>

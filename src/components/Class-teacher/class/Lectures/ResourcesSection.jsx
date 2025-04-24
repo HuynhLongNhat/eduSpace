@@ -69,7 +69,9 @@ const ResourcesSection = ({
             <Button
               variant="outline"
               size="sm"
-              className="flex items-center gap-1 text-blue-600 border-blue-600 hover:bg-blue-50"
+              className="flex items-center gap-1 
+             text-blue-600 border-blue-600 hover:bg-blue-50 
+             dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-900/20"
               onClick={() => setIsAddResourceDialogOpen(true)}
             >
               <PlusCircle className="h-4 w-4" />
@@ -99,28 +101,30 @@ const ResourcesSection = ({
                   return (
                     <div
                       key={resource.id}
-                      className={`flex items-center justify-between p-3 rounded-lg transition-colors hover:bg-gray-100 border ${
-                        isVideo && selectedVideo?.id === resource.id
-                          ? "border-blue-200 bg-blue-50"
-                          : "border-gray-100"
-                      }`}
+                      className={`flex items-center justify-between p-3 rounded-lg transition-colors
+              hover:bg-gray-100 dark:hover:bg-gray-800
+              border ${
+                isVideo && selectedVideo?.id === resource.id
+                  ? "border-blue-200 bg-blue-50 dark:bg-blue-950 dark:border-blue-400"
+                  : "border-gray-100 dark:border-gray-700"
+              }`}
                     >
                       <div className="flex items-center gap-3">
                         {fileName ? (
                           getFileIcon(fileName)
                         ) : (
-                          <FileText className="h-5 w-5 text-gray-600" />
+                          <FileText className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                         )}
                         <div className="max-w-[200px] sm:max-w-[300px]">
                           <button
                             onClick={() =>
                               handleFileNameClick(resource, isVideo)
                             }
-                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left"
+                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left dark:text-blue-400"
                           >
                             {fileName}
                           </button>
-                          <p className="mt-1 text-xs text-gray-500">
+                          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                             {moment(resource.created_at).format(
                               "HH:mm - DD/MM/YYYY"
                             )}
@@ -132,7 +136,7 @@ const ResourcesSection = ({
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-gray-700 hover:text-green-600 hover:bg-green-50"
+                            className="text-gray-700 hover:text-green-600 hover:bg-green-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-green-900/20"
                             onClick={(e) => {
                               e.preventDefault();
                               handleDownload(resource.content, fileName);
@@ -145,7 +149,7 @@ const ResourcesSection = ({
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-gray-700 hover:text-red-600 hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-600 hover:bg-red-50 dark:text-gray-300 dark:hover:text-red-400 dark:hover:bg-red-900/20"
                             onClick={() => handleDeleteAttachment(resource)}
                           >
                             <Trash2 className="h-4 w-4 mr-1" />
@@ -176,22 +180,24 @@ const ResourcesSection = ({
                   return (
                     <div
                       key={resource.id}
-                      className={`flex items-center justify-between p-3 rounded-lg transition-colors hover:bg-gray-100 border ${
-                        selectedVideo?.id === resource.id
-                          ? "border-blue-200 bg-blue-50"
-                          : "border-gray-100"
-                      }`}
+                      className={`flex items-center justify-between p-3 rounded-lg transition-colors
+              hover:bg-gray-100 dark:hover:bg-gray-800
+              border ${
+                selectedVideo?.id === resource.id
+                  ? "border-blue-200 bg-blue-50 dark:bg-blue-950 dark:border-blue-400"
+                  : "border-gray-100 dark:border-gray-700"
+              }`}
                     >
                       <div className="flex items-center gap-3">
-                        <PlayCircle className="h-5 w-5 text-purple-600" />
+                        <PlayCircle className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                         <div className="max-w-[200px] sm:max-w-[300px]">
                           <button
                             onClick={() => handleFileNameClick(resource, true)}
-                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left"
+                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left dark:text-blue-400"
                           >
                             {fileName}
                           </button>
-                          <p className="mt-1 text-xs text-gray-500">
+                          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                             {moment(resource.created_at).format(
                               "HH:mm - DD/MM/YYYY"
                             )}
@@ -203,7 +209,7 @@ const ResourcesSection = ({
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-gray-700 hover:text-red-600 hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-600 hover:bg-red-50 dark:text-gray-300 dark:hover:text-red-400 dark:hover:bg-red-900/20"
                             onClick={() => handleDeleteAttachment(resource)}
                           >
                             <Trash2 className="h-4 w-4 mr-1" />
@@ -234,22 +240,24 @@ const ResourcesSection = ({
                   return (
                     <div
                       key={resource.id}
-                      className="flex items-center justify-between p-3 rounded-lg transition-colors hover:bg-gray-100 border border-gray-100"
+                      className="flex items-center justify-between p-3 rounded-lg transition-colors
+              hover:bg-gray-100 dark:hover:bg-gray-800
+              border border-gray-100 dark:border-gray-700"
                     >
                       <div className="flex items-center gap-3">
                         {fileName ? (
                           getFileIcon(fileName)
                         ) : (
-                          <FileText className="h-5 w-5 text-gray-600" />
+                          <FileText className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                         )}
                         <div className="max-w-[200px] sm:max-w-[300px]">
                           <button
                             onClick={() => handleFileNameClick(resource, false)}
-                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left"
+                            className="font-medium text-sm line-clamp-1 text-blue-600 hover:underline text-left dark:text-blue-400"
                           >
                             {fileName}
                           </button>
-                          <p className="mt-1 text-xs text-gray-500">
+                          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                             {moment(resource.created_at).format(
                               "HH:mm - DD/MM/YYYY"
                             )}
@@ -260,7 +268,7 @@ const ResourcesSection = ({
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-gray-700 hover:text-green-600 hover:bg-green-50"
+                          className="text-gray-700 hover:text-green-600 hover:bg-green-50 dark:text-gray-300 dark:hover:text-green-400 dark:hover:bg-green-900/20"
                           onClick={(e) => {
                             e.preventDefault();
                             handleDownload(resource.content, fileName);
@@ -272,7 +280,7 @@ const ResourcesSection = ({
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-gray-700 hover:text-red-600 hover:bg-red-50"
+                            className="text-gray-700 hover:text-red-600 hover:bg-red-50 dark:text-gray-300 dark:hover:text-red-400 dark:hover:bg-red-900/20"
                             onClick={() => handleDeleteAttachment(resource)}
                           >
                             <Trash2 className="h-4 w-4 mr-1" />

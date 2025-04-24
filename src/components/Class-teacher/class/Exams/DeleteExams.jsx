@@ -23,14 +23,13 @@ const DeleteExam = ({
   const { classId } = useParams();
   const confirmDelete = async () => {
     setIsLoading(true);
-
+    console.log("examToDelete", examToDelete);
     try {
       const res = await deleteExam(examToDelete?.exam_id);
-      if (res.success) {
-        toast.success(res.message);
-        handleClose();
-        fetchAllExamByClassId(classId);
-      }
+      console.log("res", res);
+      toast.success(res.message);
+      fetchAllExamByClassId(classId);
+      handleClose();
     } catch (error) {
       const errorMessage =
         error.response?.data?.error?.details ||
