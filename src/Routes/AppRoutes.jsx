@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Loading from "@/components/Loading";
 import PublicRoute from "./PublicRoutes";
 import PrivateRoutes from "./PrivateRoutes";
+import ListAuditLog from "@/page/Admin/AuditLogManagement/ListAuditLog";
 const Layout = lazy(() => import("@/components/Layout"));
 const LayoutDashboard = lazy(() => import("@/components/LayoutDashboard"));
 const LayoutClientClass = lazy(() =>
@@ -185,6 +186,8 @@ const AppRoutes = () => {
           <Route path="users/create" element={<CreateUser />} />
           <Route path="classes/create" element={<CreateClass />} />
           <Route path="classes/update/:classId" element={<EditClass />} />
+
+          <Route path="audit-log" element={<ListAuditLog />} />
         </Route>
       </Routes>
     </Suspense>

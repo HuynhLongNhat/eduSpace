@@ -5,25 +5,24 @@ import { Home, Users, LogOut, MenuIcon, UserCircle } from "lucide-react";
 import useAuthToken from "@/hooks/userAuthToken";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
-// Menu items configuration cho Admin
 const menuAdmin = [
   { title: "Trang chủ", icon: Home, path: "/" },
   { title: "User", icon: Users, path: "/admin/users" },
+  { title: "Audit Log", icon: Users, path: "/admin/audit-log" },
+
   {
     title: "Đăng xuất",
     icon: LogOut,
-    action: "logout", // Dùng action để nhận biết mục đăng xuất
+    action: "logout",
   },
 ];
 
-// Nếu bạn muốn bỏ menu của teacher, bạn chỉ cần sử dụng menuAdmin khi URL bắt đầu bằng "/admin"
 export const SideBarDashboard = () => {
   const auth = useAuthToken();
   const [open, setOpen] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Chọn menu dựa trên URL hiện tại: chỉ sử dụng menuAdmin khi URL bắt đầu bằng "/admin"
   const menuItems = location.pathname.startsWith("/admin") ? menuAdmin : [];
 
   const handleLogout = () => {
@@ -86,7 +85,6 @@ export const SideBarDashboard = () => {
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
-            // Nếu mục có action là logout, render button thay vì Link
             if (item.action === "logout") {
               return (
                 <button
@@ -120,9 +118,7 @@ export const SideBarDashboard = () => {
         className={`flex-1 transition-all duration-300 ${
           open ? "ml-64" : "ml-20"
         }`}
-      >
-        {/* Nội dung chính của Dashboard */}
-      </div>
+      ></div>
     </div>
   );
 };
