@@ -3,7 +3,7 @@ import axios from "axios";
 // Set config defaults when creating the instance
 const instance = axios.create({
   baseURL: "https://api-service-9cy27.ondigitalocean.app/",
-  timeout: 10000,
+  timeout: 1000000,
   withCredentials: true,
 });
 instance.defaults.withCredentials = true;
