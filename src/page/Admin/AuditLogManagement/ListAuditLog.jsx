@@ -443,6 +443,15 @@ const ListAuditLog = () => {
     );
   };
 
+  {
+    loading && (
+      <div className="flex flex-col items-center py-20">
+        <RefreshCw className="h-8 w-8 animate-spin text-gray-400" />
+        <p className="mt-4 text-gray-500">Đang tải dữ liệu...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto py-6 px-4">
       <div className="mb-8">
